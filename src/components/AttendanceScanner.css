@@ -1,0 +1,217 @@
+.scanner-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.scanner-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.scanner-header h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.8rem;
+}
+
+.scanner-header p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+.scanner-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.scanner-panel,
+.records-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.barcode-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.barcode-form h3 {
+  color: #333;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input {
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.barcode-input {
+  font-family: 'Courier New', monospace;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+
+.scan-button {
+  background-color: #667eea;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.scan-button:hover {
+  background-color: #764ba2;
+}
+
+.message {
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  animation: slideIn 0.3s ease;
+}
+
+.message.success {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border-left: 4px solid #2e7d32;
+}
+
+.message.error {
+  background-color: #ffebee;
+  color: #d32f2f;
+  border-left: 4px solid #d32f2f;
+}
+
+.message.info {
+  background-color: #e3f2fd;
+  color: #1976d2;
+  border-left: 4px solid #1976d2;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.records-panel h3 {
+  color: #333;
+  margin: 0 0 1rem 0;
+}
+
+.empty-records {
+  text-align: center;
+  color: #999;
+  padding: 2rem;
+  font-style: italic;
+}
+
+.records-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.record-item {
+  background-color: #f5f5f5;
+  border-left: 4px solid #667eea;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.record-item:hover {
+  background-color: #efefef;
+}
+
+.record-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.record-info strong {
+  color: #333;
+  font-size: 1rem;
+}
+
+.record-id {
+  color: #667eea;
+  font-size: 0.85rem;
+  font-family: 'Courier New', monospace;
+}
+
+.record-time {
+  color: #999;
+  font-size: 0.85rem;
+}
+
+.delete-button {
+  background-color: #ffcdd2;
+  color: #d32f2f;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .scanner-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .records-list {
+    max-height: 400px;
+  }
+}
